@@ -8,8 +8,6 @@ import { Container, Row, Col } from "./components/Grid";
 
 class App extends Component {
   state = {
-    recipes: [],
-    recipeSearch: [],
     preferences: []
   };
 
@@ -23,7 +21,7 @@ class App extends Component {
   };
 
   handleFormSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    // When the form is submitted, prevent its default behavior, get userPreferences update the preferences state
     event.preventDefault();
     API.getUserPreferences(this.state.preferences)
       .then(res => this.setState({ preferences: res.data }))
@@ -40,14 +38,6 @@ class App extends Component {
               <form>
                 <Container>
                   <Row>
-                    <Col size="xs-9 sm-10">
-                      {/* <Input
-                        name="recipeSearch"
-                        value={this.state.recipeSearch}
-                        onChange={this.handleInputChange}
-                        placeholder="Search For a Recipe"
-                      /> */}
-                    </Col>
                     <Col size="xs-3 sm-2">
                       <Button
                         onClick={this.handleFormSubmit}
@@ -68,13 +58,13 @@ class App extends Component {
                 <h1 className="text-center">Nothing to display</h1>
               ) : (
                 <UserPrefList>
-                  {this.state.preferences.map(recipe => {
+                  {this.state.preferences.map(preference => {
                     return (
                       <UserPrefListItem
-                        key={recipe.name}
-                        thumbnail={recipe.thumbnail}
-                        userID={recipe.userID}
-                        name={recipe.name}
+                        key={preference.name}
+                        thumbnail={preference.thumbnail}
+                        userID={preference.userID}
+                        name={preference.name}
                       />
                     );
                   })}
