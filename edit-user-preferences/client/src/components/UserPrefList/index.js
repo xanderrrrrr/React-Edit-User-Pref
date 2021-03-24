@@ -12,9 +12,6 @@ export function UserPrefList({ children }) {
 // UserPrefListItem renders a bootstrap list item containing data from the recipe api call
 export function UserPrefListItem({
   thumbnail = "https://placehold.it/300x300",
-  title,
-  ingredients,
-  href,
   userID,
   name
 }) {
@@ -26,10 +23,8 @@ export function UserPrefListItem({
             <Thumbnail src={thumbnail} />
           </Col>
           <Col size="xs-8 sm-9">
-            <h3>{title}</h3>
-            <p>ID: {userID}</p>
-            <a rel="noreferrer noopener" target="_blank" href={href}>
-            </a>
+            <h4>{userID}</h4>
+            <p>Name: {name}</p>
           </Col>
         </Row>
       </Container>

@@ -71,12 +71,10 @@ class App extends Component {
                   {this.state.preferences.map(recipe => {
                     return (
                       <UserPrefListItem
-                        key={recipe.title}
-                        title={recipe.title}
-                        href={recipe.href}
-                        ingredients={recipe.ingredients}
+                        key={recipe.name}
                         thumbnail={recipe.thumbnail}
                         userID={recipe.userID}
+                        name={recipe.name}
                       />
                     );
                   })}
