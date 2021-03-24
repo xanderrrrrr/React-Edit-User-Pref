@@ -76,7 +76,7 @@ class App extends Component {
                         href={recipe.href}
                         ingredients={recipe.ingredients}
                         thumbnail={recipe.thumbnail}
-                        ID={recipe.ID}
+                        userID={recipe.userID}
                       />
                     );
                   })}

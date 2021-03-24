@@ -15,7 +15,7 @@ export function UserPrefListItem({
   title,
   ingredients,
   href,
-  ID,
+  userID,
   name
 }) {
   return (
@@ -27,7 +27,7 @@ export function UserPrefListItem({
           </Col>
           <Col size="xs-8 sm-9">
             <h3>{title}</h3>
-            <p>ID: {ID}</p>
+            <p>ID: {userID}</p>
             <a rel="noreferrer noopener" target="_blank" href={href}>
             </a>
           </Col>
