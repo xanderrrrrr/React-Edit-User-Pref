@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     recipes: [],
     recipeSearch: [],
-    blank: []
+    preferences: []
   };
 
   handleInputChange = event => {
@@ -25,8 +25,8 @@ class App extends Component {
   handleFormSubmit = event => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
-    API.getUserPreferences(this.state.recipes)
-      .then(res => this.setState({ recipes: res.data }))
+    API.getUserPreferences(this.state.preferences)
+      .then(res => this.setState({ preferences: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -64,11 +64,11 @@ class App extends Component {
           </Row>
           <Row>
             <Col size="xs-12">
-              {!this.state.recipes.length ? (
+              {!this.state.preferences.length ? (
                 <h1 className="text-center">Nothing to display</h1>
               ) : (
                 <UserPrefList>
-                  {this.state.recipes.map(recipe => {
+                  {this.state.preferences.map(recipe => {
                     return (
                       <UserPrefListItem
                         key={recipe.title}
@@ -76,6 +76,7 @@ class App extends Component {
                         href={recipe.href}
                         ingredients={recipe.ingredients}
                         thumbnail={recipe.thumbnail}
+                        ID={recipe.ID}
                       />
                     );
                   })}
