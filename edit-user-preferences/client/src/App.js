@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav";
-// import Input from "./components/Input";
-import Button from "./components/Button";
 import API from "./utils/API";
 import { UserPrefList, UserPrefListItem } from "./components/UserPrefList";
 import { Container, Row, Col } from "./components/Grid";
@@ -16,7 +14,20 @@ class App extends Component {
       API.getUserPreferences(this.state.preferences)
         .then(res => this.setState({ preferences: res.data }))
         .catch(err => console.log(err));
+
+        this.parseUrlElements(window.location.href)
   }
+
+  parseUrlElements = requestUrlGoesHere => {
+    var url_array = requestUrlGoesHere.split('&')
+    console.log(url_array);
+    console.log("wow -------")
+    // getUserPreferenceAPI(url_array)
+  }
+
+  // TO DO:
+  // Going to have to clean up the url_array
+  // and have to ensure that the API route goes to the correct domain
 
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
