@@ -11,6 +11,13 @@ class App extends Component {
     preferences: []
   };
 
+  componentDidMount = event => {
+      // When the page is loaded, get userPreferences  via API and update the preferences state
+      API.getUserPreferences(this.state.preferences)
+        .then(res => this.setState({ preferences: res.data }))
+        .catch(err => console.log(err));
+  }
+
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
@@ -20,13 +27,13 @@ class App extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get userPreferences update the preferences state
-    event.preventDefault();
-    API.getUserPreferences(this.state.preferences)
-      .then(res => this.setState({ preferences: res.data }))
-      .catch(err => console.log(err));
-  };
+  // handleFormSubmit = event => {
+  //   // When the form is submitted, prevent its default behavior, get userPreferences update the preferences state
+  //   event.preventDefault();
+  //   API.getUserPreferences(this.state.preferences)
+  //     .then(res => this.setState({ preferences: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (
@@ -38,7 +45,7 @@ class App extends Component {
               <form>
                 <Container>
                   <Row>
-                    <Col size="xs-3 sm-2">
+                    {/* <Col size="xs-3 sm-2">
                       <Button
                         onClick={this.handleFormSubmit}
                         type="success"
@@ -46,7 +53,7 @@ class App extends Component {
                       >
                         Search
                       </Button>
-                    </Col>
+                    </Col> */}
                   </Row>
                 </Container>
               </form>
