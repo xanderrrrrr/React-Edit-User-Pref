@@ -7,7 +7,7 @@ This is to reactify the ability to edit particular user preferences in WF so you
 ## To Do:
 Need to change the API to
 - not be hard limited to 5 objects
-- not use a hardcoded API and use session
+- ~~not use a hardcoded API and use session~~
 - fix the props for the API results (front-end and back-end)
 - clean up code from template
 - deploy somewhere for it to live like heroku
