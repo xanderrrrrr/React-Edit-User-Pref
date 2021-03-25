@@ -9,6 +9,9 @@ Need to change the API to
 - not be hard limited to 5 objects
 - ~~not use a hardcoded API and use session~~
 - fix the props for the API results (front-end and back-end)
+- need to add a delete button for each preference element (JSX)
+- need to create API functions in API.js to handle deletion
+- need to have the proper props for each preference so that the deletion call can function
 - clean up code from template
 - deploy somewhere for it to live like heroku
 
