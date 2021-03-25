@@ -6,24 +6,28 @@ import { Container, Row, Col } from "./components/Grid";
 
 class App extends Component {
   state = {
-    preferences: []
+    preferences: [],
+    requestURL: window.location.href
   };
 
   componentDidMount = event => {
       // When the page is loaded, get userPreferences  via API and update the preferences state
-      API.getUserPreferences(this.state.preferences)
+
+      // capturing the URL and params in a state for later consumption in API
+      // this.setState({
+      //   requestURL: "lolbutts"
+      // })     
+
+      API.getUserPreferences(this.state.requestURL)
         .then(res => this.setState({ preferences: res.data }))
         .catch(err => console.log(err));
 
-        this.parseUrlElements(window.location.href)
+
+ 
+
+        // this.parseUrlElements(window.location.href)
   }
 
-  parseUrlElements = requestUrlGoesHere => {
-    var url_array = requestUrlGoesHere.split('&')
-    console.log(url_array);
-    console.log("wow -------")
-    // getUserPreferenceAPI(url_array)
-  }
 
   // TO DO:
   // Going to have to clean up the url_array
