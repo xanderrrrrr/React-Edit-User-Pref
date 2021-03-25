@@ -12,26 +12,13 @@ class App extends Component {
 
   componentDidMount = event => {
       // When the page is loaded, get userPreferences  via API and update the preferences state
-
-      // capturing the URL and params in a state for later consumption in API
-      // this.setState({
-      //   requestURL: "lolbutts"
-      // })     
+      // I'm actually hardcoding the browsers URL to the requestURL react state
 
       API.getUserPreferences(this.state.requestURL)
         .then(res => this.setState({ preferences: res.data }))
         .catch(err => console.log(err));
-
-
- 
-
-        // this.parseUrlElements(window.location.href)
   }
 
-
-  // TO DO:
-  // Going to have to clean up the url_array
-  // and have to ensure that the API route goes to the correct domain
 
   handleInputChange = event => {
     // Destructure the name and value properties off of event.target
