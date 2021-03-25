@@ -2,9 +2,9 @@
 This is to reactify the ability to edit particular user preferences in WF so you do not have to reset all your user preferences and instead can delete the filter/view/grouping causing the issue.
 
 ## What this accomplishes
-In WF, users have the ability to create Views/Groupings/Filters for object lists. The system will usually attempt to load the last-selected View/Grouping/Filter and if the syntax is wrong on one of them you will receive a Whoops error. The fix for this has been to reset/delete **all** your user preferences, including custom tabs by going to `...com/resetUser` 
+In WF, users have the ability to create Views/Groupings/Filters for object lists. The system will usually attempt to load the last-selected View/Grouping/Filter, however if the syntax is wrong on one of them you will then receive a Whoops error and you will be unable to see the viewing options nor the list anymore. The fix for this has always been to reset/delete **all** your user preferences, including custom tabs by going to `...com/resetUser` 
 
-This is a simple app that allows you to identify and delete the offending/last selected user preferences dictating which View/Grouping/Filter the system is attempting to load. By deleting the one preference you do not have to delete all your user preferences, preserving your custom tabs and last-selected Views/Groupings/Filters.
+This is an easy-to-use app that allows you to identify and delete the offending/last selected user preferences dictating which View/Grouping/Filter the system is attempting to load. By deleting the one offending preference you will not have to delete all your user preferences, preserving your custom tabs and last-selected Views/Groupings/Filters on other objects in WF.
 
 # The dashboard in question:
 [Here](https://xandercanedo.my.workfront.com/dashboard/view?ID=5fa0943103c33dbda24582c6aabd7c9a)
