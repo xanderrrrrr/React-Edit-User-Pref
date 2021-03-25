@@ -1,23 +1,26 @@
 const axios = require("axios");
 const router = require("express").Router();
+// this is the base-call that will return all the user preferences
 const APICALL = ".my.workfront.com/attask/api-unsupported/userpf/search?&$$LIMIT=5&fields=*&"
-const SESSION = ""
 
-// will need to add own API here in the interim
-// until I can use proper sessionIDs
 
+// whenever we go to /userPreferences this is what is available
+// TODO: have to put in the DELETE method
+
+// this is the GET 
 router.get("/userPreferences", (req, res) => { 
 
-  var url_array
-
+  // function to get the sessionID from the request
   function getSession(requestURLGoesHere) {
     var url_array = requestURLGoesHere.split('&')
     console.log(url_array);
     console.log("-------")
+    // will return just the sessionID
     return url_array[1]
-    // getUserPreferenceAPI(url_array)
   }
-
+  
+  // function to get the domain from the request
+  // yes this isn't dry but I cba to fix this for now
   function getDomain(requestURLGoesHere) {
 
     var url_array = requestURLGoesHere.split('&')
@@ -31,13 +34,13 @@ router.get("/userPreferences", (req, res) => {
       tempArray.push(niceString)
       console.log("lol1", tempArray)
     }
+    // will return just the domain
     return tempArray[2]
 
   }
 
-  // by default the API in WF returns userPreferences based on the user who made the call
-  // if no userID is specified 
-  // I could code out the userID param but as of now the code to parse the URl is not dry, so don't want to make
+  // if not userID is specified, by default the API in WF returns userPreferences based on the user who made the call
+  // I could code out the userID param but as of now the code to parse the URL is not dry, so don't want to make
   // it a third unnecessary function
   // I'll have to figure out the easy way to make it dry, but for now it escapes me
   
