@@ -6,6 +6,8 @@ In WF, users have the ability to create Views/Groupings/Filters for object lists
 
 This is an easy-to-use app that allows you to identify and delete the offending/last selected user preferences dictating which View/Grouping/Filter the system is attempting to load. By deleting the one offending preference you will not have to delete all your user preferences, preserving your custom tabs and last-selected Views/Groupings/Filters on other objects in WF.
 
+_**Disclaimer**_ This app does use your logged-in session to make the API calls, but your session will not be stored anywhere. It currently is console logged server-side for verification/testing in my environment but will be removed in production.
+
 # The dashboard in question:
 [Here](https://xandercanedo.my.workfront.com/dashboard/view?ID=5fa0943103c33dbda24582c6aabd7c9a)
 
@@ -13,12 +15,13 @@ This is an easy-to-use app that allows you to identify and delete the offending/
 Need to change the API to
 - not be hard limited to 5 objects
 - ~~not use a hardcoded API and use session~~
-- fix the props for the API results (front-end and back-end)
+- ~~fix the props for the API results (front-end and back-end)~~
 - need to add a delete button for each preference element 
 - need to create API functions in API.js to handle deletion
 - need to have the proper props for each preference so that the deletion call can function
-- clean up code from template
-- deploy somewhere for it to live like heroku
+- ~~clean up code from template~~
+- Add a link to the github repo on the page
+- LAST: deploy somewhere for it to live like heroku
 
 ## Possibilities (internal for me)
 Perhaps I use a JSON viewer to render the data to the user (much like the JSON extensions one has on browser): (package here)[https://www.npmjs.com/package/react-json-view]
