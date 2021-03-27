@@ -50,6 +50,11 @@ router.get("/userPreferences", (req, res) => {
     // .then(parseUrlElements(req.query.q))
     .then(({ data: { data } }) => res.json(data))
     .catch(err => res.status(422).json(err));
-});
+})
+
+// this is the delete function
+.delete("/userPreferences", (req, res) => { 
+  // code goes here
+})
 
 module.exports = router;
