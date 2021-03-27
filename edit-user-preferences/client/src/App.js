@@ -74,6 +74,7 @@ class App extends Component {
                         thumbnail={preference.thumbnail}
                         userID={preference.userID}
                         name={preference.name}
+                        value={preference.value}
                       />
                     );
                   })}

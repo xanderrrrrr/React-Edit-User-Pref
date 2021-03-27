@@ -13,7 +13,8 @@ export function UserPrefList({ children }) {
 export function UserPrefListItem({
   thumbnail = "https://placehold.it/300x300",
   userID,
-  name
+  name,
+  value
 }) {
   return (
     <li className="list-group-item">
@@ -23,8 +24,9 @@ export function UserPrefListItem({
             <Thumbnail src={thumbnail} />
           </Col>
           <Col size="xs-8 sm-9">
-            <h4>{userID}</h4>
+            <h4>{value}</h4>
             <p>Name: {name}</p>
+            <p>Value: {userID}</p>
           </Col>
         </Row>
       </Container>
