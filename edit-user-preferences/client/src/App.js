@@ -34,6 +34,11 @@ class App extends Component {
     console.log("the name is" + name + " AND requestURL is " + this.state.requestURL)
     requestURL = this.state.requestURL
     API.deleteUserPreference(name, requestURL)
+      .then(API.getUserPreferences(this.state.requestURL)
+      .then(res => this.setState({ preferences: res.data }))
+      .catch(err => console.log(err)))
+      // .then(res => this.setState({ preferences: res.data }))
+      // .catch(err => console.log(err));
   }
 
   // handleFormSubmit = event => {
