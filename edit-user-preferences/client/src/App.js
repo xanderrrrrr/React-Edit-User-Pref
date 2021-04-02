@@ -32,6 +32,7 @@ class App extends Component {
 
   deletePreference = name => {
     console.log("the name is" + name)
+    API.deleteUserPreference(name)
   }
 
   // handleFormSubmit = event => {
@@ -81,9 +82,9 @@ class App extends Component {
                         name={preference.name}
                         value={preference.value}
                       >
-                        <p><strong>Name: {preference.name} </strong></p>
+                        <p><strong>Name: </strong>{preference.name}</p>
                         
-                        <strong>Value: {preference.value}</strong>
+                        <strong>Value: </strong> {preference.value}
                         {/* <DeleteBtn onClick={() => console.log(preference.name)}/> */}
                         <DeleteBtn onClick={() => this.deletePreference(preference.name)}/>
                         

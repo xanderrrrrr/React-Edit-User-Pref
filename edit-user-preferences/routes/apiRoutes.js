@@ -53,8 +53,9 @@ router.get("/userPreferences", (req, res) => {
 })
 
 // this is the delete function
-.delete("/userPreferences", (req, res) => { 
+.post("/userPreference", (req, res) => { 
   // code goes here
+  console.log("hitting the delete API function")
 })
 
 module.exports = router;
