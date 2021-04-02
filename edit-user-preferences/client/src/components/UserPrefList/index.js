@@ -10,26 +10,32 @@ export function UserPrefList({ children }) {
 }
 
 // UserPrefListItem renders a bootstrap list item containing data from the recipe api call
-export function UserPrefListItem({
-  thumbnail = "https://placehold.it/300x300",
-  userID,
-  name,
-  value
-}) {
+export function UserPrefListItem(
+// {
+//   thumbnail = "https://placehold.it/300x300",
+//   userID,
+//   name,
+//   value
+// }
+{children}) {
   return (
     <li className="list-group-item">
       <Container>
         <Row>
-          <Col size="xs-4 sm-2">
+          {/* <Col size="xs-4 sm-2">
             <Thumbnail src={thumbnail} />
-          </Col>
+          </Col> */}
           <Col size="xs-8 sm-9">
-            <h4>{value}</h4>
+            {/* <h4>{value}</h4>
             <p>Name: {name}</p>
-            <p>Value: {userID}</p>
+            <p>Value: {userID}</p> */}
+            {children}
           </Col>
+          {/* <DeleteBtn onClick={() => console.log({value})}></DeleteBtn> */}
         </Row>
       </Container>
     </li>
   );
 }
+
+

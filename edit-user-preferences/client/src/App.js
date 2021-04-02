@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import API from "./utils/API";
 import { UserPrefList, UserPrefListItem } from "./components/UserPrefList";
 import { Container, Row, Col } from "./components/Grid";
+import DeleteBtn from "./components/DeleteBtn";
 
 class App extends Component {
   state = {
@@ -28,6 +29,10 @@ class App extends Component {
       [name]: value
     });
   };
+
+  deleteGroup = event => {
+    console.log("lol")
+  }
 
   // handleFormSubmit = event => {
   //   // When the form is submitted, prevent its default behavior, get userPreferences update the preferences state
@@ -75,9 +80,16 @@ class App extends Component {
                         userID={preference.userID}
                         name={preference.name}
                         value={preference.value}
-                      />
+                      >
+                        <p><strong>Name: {preference.name} </strong></p>
+                        
+                        <strong>Value: {preference.value}</strong>
+                        <DeleteBtn onClick={() => console.log(preference.name)}/>
+                        
+                      </UserPrefListItem>
                     );
                   })}
+
                 </UserPrefList>
               )}
             </Col>
