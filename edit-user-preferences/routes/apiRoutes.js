@@ -95,7 +95,16 @@ router.get("/userPreferences", (req, res) => {
       console.log("WF response " + res.status);
     }, (error) => {
       console.log(error);
+    })
+    .then(res => res.data)
+    .catch(error => {
+      throw error;
     });
+
+    // the delete works, but I need to handle the post better
+    // it throws an error in the server log as well as stays pending in browser for a response
+    // But it does work!
+    // I think I have to add a .then to the App.js so that it looks like the get function
   
 })
 
