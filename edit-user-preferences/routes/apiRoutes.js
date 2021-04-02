@@ -1,7 +1,7 @@
 const axios = require("axios");
 const router = require("express").Router();
 // this is the base-call that will return all the user preferences
-const APICALL = ".my.workfront.com/attask/api-unsupported/userpf/search?&$$LIMIT=5&fields=*&"
+const APICALL = ".my.workfront.com/attask/api-unsupported/userpf/search?&$$LIMIT=2000&fields=*&"
 const UPDATE_CALL = '.my.workfront.com/attask/api-unsupported/userpf?updates={"objCode":"USERPF","value":"","name":'
 
   // function to get the sessionID from the request
@@ -75,9 +75,11 @@ router.get("/userPreferences", (req, res) => {
   
   axios
     .get("https://" + getDomain(req.query.q) + APICALL + getSession(req.query.q))
-    // .then(console.log(req.query.q , "watlol"))
+    .then(console.log(req.query.q , "watlol"))
+    .then(console.log("https://" + getDomain(req.query.q) + APICALL + getSession(req.query.q)))
     // .then(parseUrlElements(req.query.q))
     .then(({ data: { data } }) => res.json(data))
+    // .then(console.log(data, " data!"))
     .catch(err => res.status(422).json(err));
 })
 
@@ -96,10 +98,10 @@ router.get("/userPreferences", (req, res) => {
     }, (error) => {
       console.log(error);
     })
-    .then(res => res.data)
-    .catch(error => {
-      throw error;
-    });
+    // .then(res => res.data)
+    // .catch(error => {
+    //   throw error;
+    // });
 
     // the delete works, but I need to handle the post better
     // it throws an error in the server log as well as stays pending in browser for a response

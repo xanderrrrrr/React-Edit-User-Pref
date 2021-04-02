@@ -6,6 +6,7 @@ import axios from "axios";
 export default {
 
   getUserPreferences: function(query) {
+    console.log('hitting api.js')
     return axios.get("/api/userPreferences", { params: {q : query } });
   },
   // deletes user preference with a POST call
