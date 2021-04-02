@@ -30,8 +30,8 @@ class App extends Component {
     });
   };
 
-  deleteGroup = event => {
-    console.log("lol")
+  deletePreference = name => {
+    console.log("the name is" + name)
   }
 
   // handleFormSubmit = event => {
@@ -84,7 +84,8 @@ class App extends Component {
                         <p><strong>Name: {preference.name} </strong></p>
                         
                         <strong>Value: {preference.value}</strong>
-                        <DeleteBtn onClick={() => console.log(preference.name)}/>
+                        {/* <DeleteBtn onClick={() => console.log(preference.name)}/> */}
+                        <DeleteBtn onClick={() => this.deletePreference(preference.name)}/>
                         
                       </UserPrefListItem>
                     );
