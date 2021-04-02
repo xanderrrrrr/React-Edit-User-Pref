@@ -56,6 +56,10 @@ router.get("/userPreferences", (req, res) => {
 .post("/userPreference", (req, res) => { 
   // code goes here
   console.log("hitting the delete API function")
+
+  axios
+    .post("https://xandercanedo.my.workfront.com/attask/api-unsupported/proj?name=userpref1&apiKey=xxx")
+  
 })
 
 module.exports = router;
