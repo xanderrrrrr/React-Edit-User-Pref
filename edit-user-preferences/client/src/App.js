@@ -30,9 +30,10 @@ class App extends Component {
     });
   };
 
-  deletePreference = name => {
-    console.log("the name is" + name)
-    API.deleteUserPreference(name)
+  deletePreference = (name, requestURL) => {
+    console.log("the name is" + name + " AND requestURL is " + this.state.requestURL)
+    requestURL = this.state.requestURL
+    API.deleteUserPreference(name, requestURL)
   }
 
   // handleFormSubmit = event => {

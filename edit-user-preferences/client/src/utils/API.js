@@ -9,8 +9,8 @@ export default {
     return axios.get("/api/userPreferences", { params: {q : query } });
   },
   // deletes user preference with a POST call
-  deleteUserPreference: function(name) {
-    return axios.post("/api/userPreference"), { params: {q : name } }
+  deleteUserPreference: function(name, requestURL) {
+    return axios.post("/api/userPreference", { params: {q : name, u : requestURL } });
   }
 };
 
